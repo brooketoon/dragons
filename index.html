@@ -329,6 +329,68 @@ h1.title{font-size:30px;margin:4px 0 4px;text-align:center;color:#fff;text-shado
 .advhint.hide{opacity:0}
 @media (max-width:560px){.hchip{font-size:15px;padding:3px 8px}.prog{margin:0 14px 0 4px}}
 
+/* ---------- training battles ---------- */
+.bg-battle{background:linear-gradient(#8fd3ff,#d9f1ff 60%,#9bd66b 60%,#6fb84a)}
+.bg-battle .gtime{display:none}
+.bbars{position:absolute;left:0;right:0;top:8px;display:flex;gap:10px;padding:0 10px;z-index:3}
+.bbar{flex:1;background:rgba(255,255,255,.85);border-radius:14px;padding:4px 8px;font-weight:700;font-size:15px}
+.bbar.them{text-align:right}
+.bbar span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bb{height:16px;background:#e3e9ef;border-radius:9px;overflow:hidden;margin-top:2px}
+.bb i{display:block;height:100%;width:0;border-radius:9px;background:linear-gradient(90deg,#ffd34d,#ff9f1c);transition:width .6s}
+.bbar.them .bb i{margin-left:auto;background:linear-gradient(90deg,#8fb4ff,#5c7cfa)}
+.bcoach{position:absolute;left:50%;top:max(62px,15%);transform:translateX(-50%);width:26%;max-width:130px;min-width:70px;z-index:2}
+.bcoach .face{width:100%}
+.bsign{position:absolute;left:50%;top:100%;transform:translate(-50%,4px) scale(0);background:#fff;border:3px solid #3b2a1a;border-radius:14px;padding:4px 10px;font-weight:700;font-size:28px;white-space:nowrap;text-align:center;transition:transform .25s;line-height:1.1}
+.bsign small{display:block;font-size:14px}
+.bsign.show{transform:translate(-50%,4px) scale(1)}
+.bsign.ask{background:#fff6c7}.bsign.me{background:#ffe7c2}.bsign.them{background:#dfe8ff}
+.bdrag{position:absolute;bottom:8%;width:min(44%,40vh);max-width:260px;z-index:2}
+.bdrag.me{left:3%}.bdrag.them{right:3%}
+.bdrag.them .art{transform:scaleX(-1)}
+.bdrag .art svg{display:block;width:100%;height:auto;animation:bob 2.4s ease-in-out infinite}
+.bdrag.me.dash{animation:bdashR .9s ease-in-out}.bdrag.them.dash{animation:bdashL .9s ease-in-out}
+.bdrag.me.push{animation:bpushR .9s ease-in-out}.bdrag.them.push{animation:bpushL .9s ease-in-out}
+.bdrag.blast{animation:bblast .6s ease-in-out}
+.bdrag.cheer{animation:cbounce .7s ease-in-out 2}.bdrag.them.bow .art{transform:scaleX(-1) rotate(-10deg);transition:transform .4s}
+@keyframes bdashR{45%{transform:translateX(70%) translateY(-18%)}}
+@keyframes bdashL{45%{transform:translateX(-70%) translateY(-18%)}}
+@keyframes bpushR{50%{transform:translateX(24%)}}
+@keyframes bpushL{50%{transform:translateX(-24%)}}
+@keyframes bblast{30%{transform:scale(1.08,.94)}60%{transform:scale(.97,1.04)}}
+.bprop{position:absolute;left:50%;bottom:14%;transform:translateX(-50%);font-size:64px;z-index:1;pointer-events:none}
+.bprop.hoop{width:90px;height:110px;border:12px solid #ffb300;border-radius:50%;box-shadow:inset 0 0 0 4px #fff3,0 0 0 3px #a86b00}
+.bprop.hit{animation:bhit .5s ease-out}
+.bprop.rock.hit{animation:brockR .7s ease-out forwards}.bprop.rock.flip.hit{animation:brockL .7s ease-out forwards}
+@keyframes bhit{40%{transform:translateX(-50%) scale(1.25)}}
+@keyframes brockR{to{transform:translateX(10%) rotate(80deg)}}
+@keyframes brockL{to{transform:translateX(-110%) rotate(-80deg)}}
+.bshot{position:absolute;bottom:26%;font-size:44px;z-index:3;pointer-events:none}
+.bshot.me{left:30%;animation:bshotR .65s ease-in forwards}.bshot.them{right:30%;animation:bshotL .65s ease-in forwards}
+@keyframes bshotR{to{left:47%;transform:scale(1.4)}}
+@keyframes bshotL{to{right:47%;transform:scale(1.4)}}
+.bmoves{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%;max-width:560px}
+.bmoves .big{flex-direction:column;font-size:18px;padding:10px 4px;gap:0}
+.bmoves .big .e{font-size:34px}
+.bmoves .big small{font-size:14px;color:#fff8c2}
+.bmoves .big.asked{outline:4px solid #ffd34d;outline-offset:2px;animation:shine 1s infinite}
+.bmeterwrap{display:flex;flex-direction:column;align-items:center;gap:10px;width:100%;max-width:560px}
+.bmeter{position:relative;width:100%;height:40px;border-radius:20px;background:#f08a8a;border:3px solid #3b2a1a;overflow:hidden}
+.bmeter .zg{position:absolute;left:24%;width:52%;top:0;bottom:0;background:#7bd389}
+.bmeter .zp{position:absolute;left:40%;width:20%;top:0;bottom:0;background:#ffd34d}
+.bmeter i{position:absolute;top:-2px;bottom:-2px;width:8px;margin-left:-4px;background:#24324a;border-radius:4px;left:0}
+.bduo{display:flex;align-items:center;justify-content:center;gap:4px}
+.bduo .art{width:40%;max-width:170px}
+.bduo .hi5{font-size:44px;animation:bob 1s infinite}
+.flipx{transform:scaleX(-1)}
+@media (max-height:520px){
+  .bbars{gap:96px;top:4px}.bbar{font-size:13px;padding:3px 6px}.bb{height:12px}
+  .bcoach{top:0;width:72px;min-width:0}.bsign{font-size:20px;padding:2px 8px}.bsign small{font-size:12px}
+  .bdrag{width:min(30%,34vh);bottom:3%}.bprop{font-size:44px;bottom:8%}.bprop.hoop{width:60px;height:76px;border-width:9px}
+  .bg-battle .ghint{font-size:15px;padding:3px}.bg-battle .gfoot{padding:6px 10px calc(8px + env(safe-area-inset-bottom))}
+  .bmoves .big{padding:6px 4px;font-size:16px}.bmoves .big .e{font-size:24px}
+  .bmeterwrap{flex-direction:row}.bmeter{height:34px}.bg-battle .tapbtn{padding:10px 26px;font-size:24px;white-space:nowrap}
+}
 @media (prefers-reduced-motion:reduce){.bob svg,.flap,.r-legendary{animation:none}}
 </style>
 </head>
@@ -461,7 +523,72 @@ const SPECIES = [
    fact:'Crystal Queen\'s wings shimmer like a rainbow made of ice.'},
   {id:'rainbowdrifter', name:'Rainbow Drifter', el:'storm', r:'legendary', shape:'sleek', horns:'curl', back:'fin', tail:'spade', wing:'bat', pattern:'stripes', rainbow:true,
    c:{body:'#ff9ad5', dark:'#8a2a68', belly:'#fff0fa', wing:'#ffffff', accent:'#7a5cff', eye:'#2d2db8', horn:'#ffffff'}, stats:[10,7,8],
-   fact:'Rainbow Drifter only comes out after a storm, riding on rainbows.'}
+   fact:'Rainbow Drifter only comes out after a storm, riding on rainbows.'},
+  // ===== new dragons (wave 2) =====
+  // ----- common -----
+  {id:'cinderpup', name:'Cinderpup', el:'ember', r:'common', shape:'chubby', horns:'nose', back:'spikes', tail:'flame', wing:'none', pattern:'spots',
+   c:{body:'#ff6a4d', dark:'#8f2414', belly:'#ffe0b0', wing:'#ffa86b', accent:'#ffc23d', eye:'#2d3a8c', horn:'#fff2d4'}, stats:[4,3,3],
+   fact:'Cinderpup has no wings, so it runs super fast on its four little legs, like a puppy!'},
+  {id:'bubblesnout', name:'Bubblesnout', el:'wave', r:'common', shape:'chubby', horns:'frill', back:'fin', tail:'fin', wing:'round', pattern:'spots',
+   c:{body:'#7fc8ff', dark:'#1f5f99', belly:'#e8f7ff', wing:'#b5e0ff', accent:'#ffffff', eye:'#ff6f91', horn:'#ffffff'}, stats:[3,3,3],
+   fact:'Bubblesnout blows giant bubbles that float all the way up to the clouds.'},
+  {id:'pinewhisker', name:'Pinewhisker', el:'bloom', r:'common', shape:'tall', horns:'antler', back:'leaves', tail:'leaf', wing:'tiny', pattern:'stripes',
+   c:{body:'#3f8f4f', dark:'#173f22', belly:'#d9efb8', wing:'#7cc66d', accent:'#a8e06a', eye:'#7a3e12', horn:'#e9d2a8'}, stats:[3,3,3],
+   fact:'Pinewhisker smells like a pine forest and hides pinecones for winter snacks.'},
+  {id:'mudpuddle', name:'Mudpuddle', el:'stone', r:'common', shape:'chubby', horns:'curl', back:'plates', tail:'club', wing:'none', pattern:'cracks',
+   c:{body:'#a77b55', dark:'#4a2f19', belly:'#f0dcbc', wing:'#c49a72', accent:'#6b4a2e', eye:'#2a7f57', horn:'#fff1da'}, stats:[2,5,2],
+   fact:'Mudpuddle can\'t fly, but it LOVES to stomp and splash in mud puddles.'},
+  {id:'sparkbug', name:'Sparkbug', el:'storm', r:'common', shape:'sleek', horns:'spike', back:'spikes', tail:'star', wing:'butterfly', pattern:'spots',
+   c:{body:'#a27cff', dark:'#40238f', belly:'#efe6ff', wing:'#fff38a', accent:'#ffe14d', eye:'#1f8a5c', horn:'#ffe14d'}, stats:[5,2,3],
+   fact:'Sparkbug glows like a firefly when it gets excited.'},
+  {id:'frostnibble', name:'Frostnibble', el:'frost', r:'common', shape:'sleek', horns:'crown', back:'fluff', tail:'crystal', wing:'feather', pattern:'none',
+   c:{body:'#bff5e6', dark:'#2d8070', belly:'#ffffff', wing:'#e0fff7', accent:'#7fe0ff', eye:'#4a3bd6', horn:'#ffffff'}, stats:[4,2,3],
+   fact:'Frostnibble nibbles icicles like they are crunchy carrots.'},
+  {id:'gustpuff', name:'Gustpuff', el:'storm', r:'common', shape:'chubby', horns:'curl', back:'fluff', tail:'spade', wing:'round', pattern:'none',
+   c:{body:'#e6f0ff', dark:'#4d6894', belly:'#ffffff', wing:'#cfe0ff', accent:'#8fb4ff', eye:'#3a55c4', horn:'#ffffff'}, stats:[4,3,2],
+   fact:'Gustpuff is so fluffy that birds think it is a cloud and sit on it!'},
+  // ----- rare -----
+  {id:'doubletalk', name:'Doubletalk', el:'storm', r:'rare', heads:2, shape:'chubby', horns:'spike', back:'spikes', tail:'star', wing:'bat', pattern:'stripes',
+   c:{body:'#4fc3a1', dark:'#145c4a', belly:'#d8fff1', wing:'#8ee6c9', accent:'#ffd84d', eye:'#6b2fd6', horn:'#ffd84d'}, stats:[4,4,5],
+   fact:'Doubletalk has TWO heads that always finish each other\'s sentences.'},
+  {id:'lavaloaf', name:'Lavaloaf', el:'ember', r:'rare', shape:'chubby', horns:'curl', back:'plates', tail:'flame', wing:'none', pattern:'cracks',
+   c:{body:'#8a4b3c', dark:'#3a1a12', belly:'#ffb36b', wing:'#c96a4a', accent:'#ffb02e', eye:'#ffd23f', horn:'#ffe3c2'}, stats:[3,6,5],
+   fact:'Lavaloaf has no wings. It digs warm tunnels under volcanoes instead!'},
+  {id:'reefrunner', name:'Reefrunner', el:'wave', r:'rare', shape:'sleek', horns:'frill', back:'fin', tail:'fin', wing:'none', pattern:'stripes',
+   c:{body:'#2ec4b6', dark:'#0e5a54', belly:'#d7fff9', wing:'#7fe8de', accent:'#ff9f5a', eye:'#ff5a8a', horn:'#fff4e6'}, stats:[6,3,4],
+   fact:'Reefrunner doesn\'t need wings. It swims faster than any boat!'},
+  {id:'petalwing', name:'Petalwing', el:'bloom', r:'rare', shape:'sleek', horns:'curl', back:'leaves', tail:'leaf', wing:'butterfly', pattern:'spots',
+   c:{body:'#ffa3c7', dark:'#9c2f62', belly:'#fff0f6', wing:'#ffd1e6', accent:'#8fd16a', eye:'#2d7a3a', horn:'#ffffff'}, stats:[5,3,5],
+   fact:'Petalwing\'s wings look like flower petals. Butterflies follow it everywhere.'},
+  {id:'icicletusk', name:'Icicletusk', el:'frost', r:'rare', shape:'tall', horns:'nose', back:'crystals', tail:'club', wing:'tiny', pattern:'cracks',
+   c:{body:'#8fb8e8', dark:'#28497a', belly:'#eef6ff', wing:'#c4dcff', accent:'#ffffff', eye:'#1f8bd6', horn:'#e8fbff'}, stats:[3,6,4],
+   fact:'Icicletusk uses its icy nose horn to make slides on snowy hills.'},
+  {id:'moonbeam', name:'Moonbeam', el:'star', r:'rare', shape:'chubby', horns:'crown', back:'crystals', tail:'star', wing:'feather', pattern:'stars',
+   c:{body:'#d6ccff', dark:'#4a3c94', belly:'#fbf9ff', wing:'#efe8ff', accent:'#fff27a', eye:'#7a4fd6', horn:'#fff27a'}, stats:[5,3,5],
+   fact:'Moonbeam only wakes up at night to sing lullabies to the moon.'},
+  // ----- epic -----
+  {id:'twinflare', name:'Twinflare', el:'ember', r:'epic', heads:2, shape:'sleek', horns:'spike', back:'spikes', tail:'flame', wing:'bat', pattern:'stripes',
+   c:{body:'#ff4f6d', dark:'#7d1027', belly:'#ffd8b8', wing:'#ff9a4d', accent:'#ffd23f', eye:'#2b2b8f', horn:'#fff0d6'}, stats:[6,5,7],
+   fact:'One of Twinflare\'s heads breathes fire. The other breathes warm sparkles!'},
+  {id:'boulderback', name:'Boulderback', el:'stone', r:'epic', shape:'tall', horns:'antler', back:'plates', tail:'club', wing:'none', pattern:'cracks',
+   c:{body:'#7d8a73', dark:'#2c3527', belly:'#e3dcc2', wing:'#a2ad96', accent:'#d6b46b', eye:'#e8732b', horn:'#f2ead8'}, stats:[4,9,5],
+   fact:'Boulderback is too heavy to fly, so it curls up and rolls down hills like a giant ball.'},
+  {id:'stormrider', name:'Stormrider', el:'storm', r:'epic', shape:'sleek', horns:'curl', back:'fin', tail:'spade', wing:'feather', pattern:'stars',
+   c:{body:'#2d3a6b', dark:'#0f1430', belly:'#a7b6ff', wing:'#6b7fff', accent:'#7ff0ff', eye:'#7ff0ff', horn:'#cdf7ff'}, stats:[8,4,6],
+   fact:'Stormrider surfs on lightning bolts across the sky.'},
+  {id:'nebulon', name:'Nebulon', el:'star', r:'epic', shape:'tall', horns:'curl', back:'fin', tail:'star', wing:'butterfly', pattern:'stars',
+   c:{body:'#7b3fb8', dark:'#2c0f4f', belly:'#f0c8ff', wing:'#ff8fd8', accent:'#ffe86b', eye:'#ffe86b', horn:'#ffe86b'}, stats:[6,5,7],
+   fact:'Nebulon\'s wings are full of tiny stars, like a piece of outer space.'},
+  // ----- legendary -----
+  {id:'twintides', name:'Twin Tides', el:'wave', r:'legendary', heads:2, shape:'tall', horns:'crown', back:'fin', tail:'fin', wing:'bat', pattern:'stars',
+   c:{body:'#1f7fd1', dark:'#0b2f5a', belly:'#bdf0ff', wing:'#4fd1e8', accent:'#fff27a', eye:'#ffd34d', horn:'#ffe27a'}, stats:[8,9,9],
+   fact:'Twin Tides\' two heads take turns: one keeps watch while the other naps.'},
+  {id:'ancientoak', name:'Ancient Oak', el:'bloom', r:'legendary', shape:'chubby', horns:'antler', back:'leaves', tail:'leaf', wing:'none', pattern:'spots',
+   c:{body:'#8a6a3f', dark:'#3a2a12', belly:'#e9f5c4', wing:'#7cc35a', accent:'#ff8fb8', eye:'#2f8f4a', horn:'#b98a55'}, stats:[5,10,9],
+   fact:'Ancient Oak is so old that trees grow on its back. It walks the forest instead of flying.'},
+  {id:'cosmiccomet', name:'Cosmic Comet', el:'star', r:'legendary', shape:'sleek', horns:'spike', back:'crystals', tail:'star', wing:'feather', pattern:'stars', rainbow:true,
+   c:{body:'#1d1f5c', dark:'#07082a', belly:'#9fb2ff', wing:'#ffffff', accent:'#fff27a', eye:'#7ff0ff', horn:'#fff27a'}, stats:[10,7,9],
+   fact:'Cosmic Comet zooms around the world in one night and leaves a rainbow tail behind.'}
 ];
 const SP = Object.fromEntries(SPECIES.map(s => [s.id, s]));
 
@@ -700,9 +827,18 @@ function dragonSVG(sp, o = {}) {
 
   const face = faceSVG(o.mood || 'happy', c, dk);
 
-  return `<svg viewBox="-14 0 214 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${esc(sp.name)}">${defs}
-    <g transform="translate(${f1(S[0] + 8)},${f1(S[1] - 2)}) rotate(16) scale(${f1(ws * .9)})">${wingSVG(sp, backWingFill, true)}</g>
+  const noWing = sp.wing === 'none', two = sp.heads === 2;
+  const frontWing = `<g transform="translate(${f1(S[0])},${f1(S[1])}) scale(${ws})"><g class="flap">${wingSVG(sp, wingFill, false)}</g></g>`;
+  // second head (two-headed dragons): same neck + head, tilted back and up behind the main head
+  const head2 = sp.heads === 2 ? `<g transform="translate(-30,-10) rotate(-20 ${f1(P1[0])} ${f1(P1[1])})">
+    ${hornSVG(sp)}
+    <g fill="${dk}" stroke="${dk}" stroke-width="6" stroke-linejoin="round"><path d="${neck}"/>${head}</g>
+    <g fill="${mix(c.body, dk, .12)}"><path d="${neck}"/>${head}</g>
+    ${faceSVG(o.mood || 'happy', c, dk)}</g>` : '';
+  const inner = `${noWing ? '' : `<g transform="translate(${f1(S[0] + 8)},${f1(S[1] - 2)}) rotate(16) scale(${f1(ws * .9)})">${wingSVG(sp, backWingFill, true)}</g>`}
     ${backDecoSVG(sp, b)}
+    ${two && !noWing ? frontWing : ''}
+    ${head2}
     ${hornSVG(sp)}
     <g fill="${dk}" stroke="${dk}" stroke-width="6" stroke-linejoin="round"><path d="${tail}"/>${backLeg}${bodyE}<path d="${neck}"/>${head}${frontLegShapes}</g>
     <g fill="${mix(c.body, dk, .22)}">${backLeg}</g>
@@ -714,7 +850,10 @@ function dragonSVG(sp, o = {}) {
     ${mudSVG(b, u + 'c', o.dirt || 0)}
     ${face}
     <g fill="url(#${u}b)" stroke="${dk}" stroke-width="3">${frontLegShapes}</g>${claws}
-    <g transform="translate(${f1(S[0])},${f1(S[1])}) scale(${ws})"><g class="flap">${wingSVG(sp, wingFill, false)}</g></g>${stinkSVG(o.dirt || 0)}
+    ${noWing || two ? '' : frontWing}${stinkSVG(o.dirt || 0)}`;
+  // two-headed dragons are shrunk a little so the extra head fits in the picture
+  return `<svg viewBox="-14 0 214 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${esc(sp.name)}">${defs}
+    ${sp.heads === 2 ? `<g transform="translate(14,22) scale(.86)">${inner}</g>` : inner}
   </svg>`;
 }
 
@@ -767,7 +906,7 @@ function readSlot(i) { try { const s = localStorage.getItem(SLOT_KEYS[i]); retur
 function save() { if (!S || slot === null) return; try { localStorage.setItem(SLOT_KEYS[slot], JSON.stringify(S)); } catch (e) {} }
 function enterProfile(i, data) {
   slot = i; S = data; if (!S.pname) S.pname = 'Player ' + (i + 1);
-  trainSel = raceSel = careSel = advSel = null; tab = 'home'; homeView = 'mine'; sleeping = false;
+  trainSel = raceSel = battleSel = careSel = advSel = null; tab = 'home'; homeView = 'mine'; sleeping = false;
   S.dragons.forEach(initNeeds); tickAll(); render();
 }
 
@@ -837,7 +976,7 @@ function openModal(html) { const m = $('#modal'); m.querySelector('.mbox').inner
 function closeModal() { $('#modal').classList.add('hidden'); }
 
 // ---------- ui state ----------
-let tab = 'home', homeView = 'mine', trainSel = null, raceSel = null, arenaView = 'train';
+let tab = 'home', homeView = 'mine', trainSel = null, raceSel = null, battleSel = null, arenaView = 'train';
 
 function renderTop() {
   if (!S) { $('#cCoins').textContent = $('#cFish').textContent = $('#cTro').textContent = '–'; return; }
@@ -914,7 +1053,8 @@ function homeHTML() {
      <button class="${homeView === 'book' ? 'on' : ''}" data-act="homeView" data-arg="book">📖 Dragon Book</button></div>${list}`;
 }
 function arenaHTML() {
-  return `<div class="tabs"><button class="${arenaView === 'train' ? 'on' : ''}" data-act="arenaView" data-arg="train">💪 Train</button><button class="${arenaView === 'race' ? 'on' : ''}" data-act="arenaView" data-arg="race">🏁 Race</button></div>` + (arenaView === 'train' ? trainHTML() : raceHTML());
+  const tb = (k, l) => `<button class="${arenaView === k ? 'on' : ''}" data-act="arenaView" data-arg="${k}">${l}</button>`;
+  return `<div class="tabs">${tb('train', '💪 Train')}${tb('battle', '🤝 Battle')}${tb('race', '🏁 Race')}</div>` + ({train: trainHTML, battle: battleHTML, race: raceHTML}[arenaView] || trainHTML)();
 }
 
 function playHTML() {
@@ -1308,6 +1448,155 @@ function raceResult(d, tier, place) {
   resultModal(`<div style="font-size:80px">${['🥇', '🥈', '🥉', '🎗️'][place - 1]}</div><h2>${msg}</h2><div class="art bob" style="max-width:200px">${dragonSVG(SP[d.sp])}</div>
     <p style="font-size:22px">You earned 🪙 <b>${prize}</b>${place === 1 ? ' and a 🏆 trophy!' : ''}</p>${place > 1 ? '<p style="font-size:17px">Tip: train your dragon to get more power! 💪</p>' : ''}`);
   say(msg);
+}
+
+// ============================================================
+// ---------- training battles (friendly — nobody gets hurt!) ----------
+// ============================================================
+const BTIERS = [
+  {name: 'Easy', e: '🌱', rars: ['common'], bonus: 0, prize: 10, practice: 3, smart: .35, gain: 1, blurb: 'Practice with common dragons'},
+  {name: 'Medium', e: '🔥', rars: ['rare'], bonus: 3, prize: 25, practice: 5, smart: .5, gain: 1, blurb: 'Practice with rare dragons'},
+  {name: 'Hard', e: '👑', rars: ['epic', 'legendary'], bonus: 6, prize: 50, practice: 8, smart: .65, gain: 2, blurb: 'Practice with epic & legendary dragons'}
+];
+const BGOAL = 20;
+const COACH = {name: 'Coach Bjorn', skin: '#f1c19a', hair: '#b5651d', beard: '#b5651d', braids: false, shirt: '#8e44ad'};
+const BMOVES = {
+  speed: {n: 'Speed Dash', e: '💨', cls: 'blue', prop: 'hoop'},
+  strength: {n: 'Strength Push', e: '💪', cls: '', prop: 'rock'},
+  blast: {n: 'Blast Spark', e: '✨', cls: 'green', prop: 'target'}
+};
+const bVal = st => 1.5 + st * .3;
+function rivalPower(t) { // typical rival power for the hint text
+  const pool = SPECIES.filter(s => t.rars.includes(s.r));
+  const avg = k => pool.reduce((a, s) => a + s.stats[k], 0) / pool.length + t.bonus;
+  return Math.round(avg(0) * 1.6 + avg(1) * .8 + avg(2) * .8);
+}
+function battleHTML() {
+  if (!getD(battleSel)) battleSel = favD().id;
+  const d = getD(battleSel);
+  const txt = 'Battles are friendly practice! Show Coach Bjorn your best moves. Do the move the coach asks for to get double points. Nobody gets hurt!';
+  return `<h1 class="title">Training Battles ${speakBtn(txt)}</h1><p class="sub">Friendly practice — nobody gets hurt! 🤝</p>
+   ${pickerHTML(battleSel, 'battleSel')}
+   <div style="text-align:center;margin-bottom:12px"><span class="powerbox">${esc(d.name)}'s Power: ⚡ ${power(d)}</span></div>
+   ${BTIERS.map((t, i) => { const rp = rivalPower(t), mp = power(d);
+     return `<button class="tier" data-act="battleGo" data-arg="${i}"><span class="e">${t.e}</span><div><h3>${t.name}</h3>
+     <p>${t.blurb} · Win 🪙 ${t.prize} + 🏆</p><p>${mp + 6 >= rp ? '😊 You can do it!' : mp + 16 >= rp ? '😬 Tricky! Listen to the coach!' : '😱 Very hard — train more!'}</p></div><span class="go">Battle!</span></button>`; }).join('')}`;
+}
+function playBattle(d, ti) {
+  const t = BTIERS[ti], sp = SP[d.sp];
+  const pool = SPECIES.filter(s => t.rars.includes(s.r) && s.id !== d.sp);
+  const rsp = pick(pool.length ? pool : SPECIES.filter(s => t.rars.includes(s.r)));
+  const rb = t.bonus - (rsp.r === 'legendary' ? 2 : 0);
+  const riv = {speed: rsp.stats[0] + rb, strength: rsp.stats[1] + rb, blast: rsp.stats[2] + rb};
+  const g = openArena(`${t.e} ${t.name} Battle`, 'bg-battle', 'Get ready!');
+  const hint = g.box.querySelector('.ghint');
+  const blastE = EL[sp.el].e, rblastE = EL[rsp.el].e;
+  g.arena.innerHTML = `
+    <div class="bbars"><div class="bbar me"><span>⭐ ${esc(d.name)}</span><div class="bb"><i></i></div></div>
+      <div class="bbar them"><span>${esc(rsp.name)}</span><div class="bb"><i></i></div></div></div>
+    <div class="bcoach"><div class="face">${vikingSVG(COACH)}</div><div class="bsign"></div></div>
+    <div class="bprop"></div>
+    <div class="bdrag me"><div class="art">${dragonSVG(sp, dOpts(d))}</div></div>
+    <div class="bdrag them"><div class="art">${dragonSVG(rsp)}</div></div>`;
+  const $a = q => g.arena.querySelector(q);
+  const meEl = $a('.bdrag.me'), themEl = $a('.bdrag.them'), prop = $a('.bprop'), sign = $a('.bsign');
+  let mine = 0, theirs = 0, alive = true, ask = null, raf = 0, round = 0;
+  const used = {speed: 0, strength: 0, blast: 0};
+  g.setScore(`⭐ 0 – 0`);
+  const later = (ms, f) => setTimeout(() => { if (alive) f(); }, ms);
+  g.onQuit = () => { alive = false; cancelAnimationFrame(raf); g.close(); };
+  function bars() {
+    $a('.bbar.me i').style.width = Math.min(100, mine / BGOAL * 100) + '%';
+    $a('.bbar.them i').style.width = Math.min(100, theirs / BGOAL * 100) + '%';
+    g.setScore(`⭐ ${mine} – ${theirs}`);
+  }
+  function showSign(html, cls = '') { sign.className = 'bsign show ' + cls; sign.innerHTML = html; }
+  function newRound() {
+    round++;
+    ask = pick(['speed', 'strength', 'blast']);
+    const m = BMOVES[ask];
+    const line = `Coach says: show me a ${m.n.split(' ')[0].toUpperCase()} move for double points!`;
+    hint.innerHTML = `📣 Coach: <b>${m.e} ${m.n.split(' ')[0]}</b> = double points!`;
+    showSign(`${m.e}<small>x2</small>`, 'ask');
+    say(line);
+    g.foot.innerHTML = `<div class="bmoves">${Object.entries(BMOVES).map(([k, mv]) =>
+      `<button class="big ${mv.cls} ${k === ask ? 'asked' : ''}" data-m="${k}"><span class="e">${k === 'blast' ? blastE : mv.e}</span>${mv.n.split(' ')[0]}<small>${k === ask ? '⭐ x2!' : '&nbsp;'}</small></button>`).join('')}</div>`;
+    g.foot.querySelectorAll('[data-m]').forEach(b => b.addEventListener('click', () => { if (alive) timing(b.dataset.m); }));
+  }
+  // a big, slow, friendly timing meter
+  function timing(k) {
+    sfx('pop');
+    g.foot.innerHTML = `<div class="bmeterwrap"><div class="bmeter"><div class="zg"></div><div class="zp"></div><i></i></div><button class="tapbtn">STOP! ✋</button></div>`;
+    hint.innerHTML = 'Tap <b>STOP</b> when the arrow is in the <b style="color:#e0a800">gold</b>! ⭐';
+    const mk = g.foot.querySelector('.bmeter i'), btn = g.foot.querySelector('.tapbtn');
+    const t0 = performance.now(), per = 2600; let pos = 0, done = false;
+    const step = now => { if (!alive || done) return; const ph = ((now - t0) % per) / per; pos = ph < .5 ? ph * 2 : 2 - ph * 2; mk.style.left = (pos * 100) + '%'; raf = requestAnimationFrame(step); };
+    raf = requestAnimationFrame(step);
+    btn.addEventListener('pointerdown', e => {
+      e.preventDefault(); if (done) return; done = true; cancelAnimationFrame(raf);
+      const off = Math.abs(pos - .5);
+      const q = off <= .1 ? 'perfect' : off <= .26 ? 'great' : 'good';
+      doMove(true, k, q);
+    });
+  }
+  function doMove(isMe, k, q) {
+    const el = isMe ? meEl : themEl, st = isMe ? d[k] : riv[k];
+    const mult = {perfect: 1.5, great: 1.15, good: .8}[q] * (k === ask ? 2 : 1);
+    const pts = Math.max(1, Math.round(bVal(st) * mult * (isMe ? 1 : rnd(.8, 1.15))));
+    if (isMe) { used[k]++; g.foot.innerHTML = ''; }
+    // the move animation
+    const pr = BMOVES[k].prop;
+    prop.className = 'bprop ' + pr + (isMe ? '' : ' flip'); prop.innerHTML = pr === 'hoop' ? '' : pr === 'rock' ? '🪨' : '🎯';
+    el.classList.remove('dash', 'push', 'blast'); void el.offsetWidth; el.classList.add({speed: 'dash', strength: 'push', blast: 'blast'}[k]);
+    if (k === 'blast') {
+      const shot = document.createElement('div'); shot.className = 'bshot ' + (isMe ? 'me' : 'them'); shot.textContent = isMe ? blastE : rblastE;
+      g.arena.appendChild(shot); setTimeout(() => shot.remove(), 900);
+    }
+    sfx(k === 'strength' ? 'tap' : 'coin');
+    later(650, () => {
+      prop.classList.add('hit'); sfx('good');
+      const word = isMe ? {perfect: 'PERFECT!', great: 'GREAT!', good: 'Nice!'}[q] : 'Nice move!';
+      showSign(`+${pts}<small>${word}${k === ask ? ' ⭐x2' : ''}</small>`, isMe ? 'me' : 'them');
+      floatText(g.arena, isMe ? 28 : 72, 42, `+${pts} ⭐`);
+      if (isMe) mine += pts; else theirs += pts; bars();
+      later(1000, () => {
+        prop.className = 'bprop'; prop.innerHTML = '';
+        if (mine >= BGOAL || theirs >= BGOAL) return finish();
+        if (isMe) {
+          hint.innerHTML = `${esc(rsp.name)}'s turn… 👀`;
+          const rk = Math.random() < t.smart ? ask : pick(['speed', 'strength', 'blast']);
+          later(500, () => doMove(false, rk, pick(['great', 'great', 'perfect', 'good'])));
+        } else newRound();
+      });
+    });
+  }
+  function finish() {
+    alive = false; cancelAnimationFrame(raf);
+    const win = mine >= BGOAL;
+    const best = Object.keys(used).sort((a, b) => used[b] - used[a])[0];
+    const before = level(d);
+    let gain = 0;
+    if (win) { gain = Math.min(t.gain, MAXS - d[best]); d[best] += gain; d.pts += gain; S.coins += t.prize; S.trophies++; }
+    else S.coins += t.practice;
+    initNeeds(d); bumpN(d, 'happy', 8); bumpN(d, 'energy', -6);
+    save(); renderTop();
+    const up = level(d) > before, name = {speed: 'Speed 💨', strength: 'Strength 💪', blast: 'Blast ✨'}[best];
+    meEl.classList.add('cheer'); themEl.classList.add('bow');
+    hint.innerHTML = win ? '🎉 You won! The dragons high-five! 🙌' : '🙌 Good game! The dragons high-five!';
+    setTimeout(() => {
+      g.close();
+      if (win) { sfx('win'); confetti(120); } else sfx('good');
+      resultModal(`<div style="font-size:70px">${win ? '🏆' : '🙌'}</div><h2>${win ? 'You won the training battle!' : 'Great practice!'}</h2>
+        <div class="bduo"><div class="art bob">${dragonSVG(sp, {mood: 'love', dirt: dirtOf(d)})}</div><div class="hi5">🙌</div><div class="art bob flipx">${dragonSVG(rsp, {mood: 'love'})}</div></div>
+        <p style="font-size:18px;margin:4px 0">${esc(rsp.name)} says: “${win ? 'Wow, you are good! Let\'s practice again!' : 'Good game! You are getting stronger!'}”</p>
+        <p style="font-size:22px;margin:6px 0">You earned 🪙 <b>${win ? t.prize : t.practice}</b>${win ? ' and a 🏆 trophy!' : ''}</p>
+        ${gain ? `<p style="font-size:22px;margin:4px 0"><b>${name} +${gain}</b></p>` : ''}${up ? `<p style="font-size:22px;color:#e8532b"><b>🎉 LEVEL UP! Now level ${level(d)}!</b></p>` : ''}
+        ${win ? '' : '<p style="font-size:17px">Tip: do the move the coach asks for, and train to get stronger! 💪</p>'}`);
+      say(win ? `You won! ${d.name} got more ${best}!` : 'Great practice! Good game!');
+    }, 1300);
+  }
+  later(400, () => { hint.innerHTML = `${esc(d.name)} vs ${esc(rsp.name)} — a friendly training match! 🤝`; say(`${d.name} and ${rsp.name} are going to practice together!`); });
+  later(2400, newRound);
 }
 
 // ============================================================
@@ -2054,8 +2343,10 @@ function doImport(i, d) {
 
 // ---------- actions ----------
 const ACT = {
-  tab: a => { if (a === 'train' || a === 'race') { arenaView = a; a = 'arena'; } tab = a; render(); },
+  tab: a => { if (a === 'train' || a === 'race' || a === 'battle') { arenaView = a; a = 'arena'; } tab = a; render(); },
   arenaView: a => { arenaView = a; render(); },
+  battleSel: a => { battleSel = +a; render(); },
+  battleGo: a => { const d = getD(battleSel); if (d) playBattle(d, +a); },
   careSel: a => { careSel = +a; careMood = null; render(); },
   careFor: a => { careSel = +a; tab = 'care'; render(); },
   advSel: a => { advSel = +a; render(); },
@@ -2072,7 +2363,7 @@ const ACT = {
       <button class="big gray" data-act="reset1">Start over</button><button class="big green" data-act="close">Close</button></div>`),
   reset1: () => openModal(`<h2>Start over?</h2><p style="font-size:18px">All dragons, coins and trophies will be gone. Ask a grown-up first!</p>
       <div class="row"><button class="big" data-act="reset2">Yes, start over</button><button class="big green" data-act="close">No, keep my game</button></div>`),
-  reset2: () => { const n = S.pname; S = fresh(); S.pname = n; save(); closeModal(); tab = 'home'; trainSel = raceSel = careSel = advSel = null; render(); },
+  reset2: () => { const n = S.pname; S = fresh(); S.pname = n; save(); closeModal(); tab = 'home'; trainSel = raceSel = battleSel = careSel = advSel = null; render(); },
   showCode: () => { if (S) showCodeModal(); },
   showImport: () => showImportModal(),
   copyCode: () => { const t = $('#codeOut'); if (!t) return; t.focus(); t.select(); t.setSelectionRange(0, 1e6);
